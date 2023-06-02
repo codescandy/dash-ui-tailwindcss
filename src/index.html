@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Document</title>
+
+      {{> head }}
+<style> .question {
+
+  transition: all 0.5s ease;
+
+}
+
+.question + .question {
+  border-top: 2px solid #efeffb;
+}
+.question .faqAnswer {
+  display: none;
+
+}
+
+h4 {
+  border-radius: 6px;
+
+  padding-right: 30px;
+  color: black;
+  font-weight: 300;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all .3s ease;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23000000' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cline x1='12' y1='5' x2='12' y2='19' /%3E%3Cline x1='5' y1='12' x2='19' y2='12' /%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+h4:hover {
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' stroke-width='1.5' stroke='%239797cf' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cline x1='12' y1='5' x2='12' y2='19' /%3E%3Cline x1='5' y1='12' x2='19' y2='12' /%3E%3C/svg%3E");
+}
+h4.open {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-minus' width='24' height='24' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23000000' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cline x1='5' y1='12' x2='19' y2='12' /%3E%3C/svg%3E");
+}
+
+
+
+</style>
+   </head>
+
+<body>
+
+
+   <div class="flex flex-auto flex-col">
+      <div class="flex flex-auto min-w-0">
+         <div>
+            {{> docs-sidebar }}
+         </div>
+         <div class="flex flex-col flex-auto min-h-screen min-w-0 relative w-full">
+<header class="bg-white  lg:ml-[300px] sticky right-0 left-0 border-b z-10">
+   <div class="flex justify-between items-center h-[64px] p-5">
+      <div class="flex items-center">
+         <div>
+      <a href="#!">
+         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h14.5M3.75 12h14.5m-14.5 5.25h14.5" />
+          </svg>
+
+      </a>
+   </div>
+      <div class="relative ml-4">
+         <input type="search" class="pl-10 border border-gray-200 rounded-md w-80">
+         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="pointer-events-none absolute inset-y-0 left-0 ml-4 h-full w-4  transition">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+          </svg>
+
+         </div>
+   </div>
+   <div>
+
+    <div class="flex items-center">
+    <div class="dropdown relative md:static mr-3">
+
+      <a href="#" class="menu-btn focus:outline-none focus:shadow-outline flex items-center justify-center rounded-full  text-gray-600 hover:bg-gray-200 h-10 w-10 text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell icon-xs"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+
+
+      </a>
+      <button class="fixed top-0 left-0 z-10 w-full h-full menu-overflow hidden"></button>
+
+
+
+      <div class="border text-gray-500 menu  lg:w-80 md:w-full rounded-md bg-white shadow-md absolute z-20 right-4  mt-5 pt-2 animated faster hidden">
+
+
+
+
+            <div class="border-b px-3 pb-3 flex
+              justify-between items-center">
+              <p class="mb-0 text-gray-800 font-medium text-md">Notifications</p>
+              <a href="#!" class="text-muted">
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings me-1 icon-xs"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                </span>
+              </a>
+            </div>
+
+            <!-- List group -->
+            <div class="h-80" data-simplebar>
+            <ul class="list-none">
+              <!-- List group item -->
+              <li class="bg-gray-100 p-4 border-b">
+
+
+                <a href="#!" class="text-muted">
+                    <h5 class="mb-1 text-gray-800">Rishi Chopra</h5>
+                    <p class="mb-0 text-sm">
+                      Mauris blandit erat id nunc blandit, ac eleifend dolor pretium.
+                    </p>
+                </a>
+
+
+
+          </li>
+             <!-- List group item -->
+             <li class="hover:bg-gray-100 p-4 border-b">
+
+
+              <a href="#!" class="text-muted">
+                <h5 class="mb-1 text-gray-800">Neha Kannned</h5>
+                <p class="mb-0 text-sm">
+                    Proin at elit vel est condimentum elementum id in ante. Maecenas et sapien metus.
+                  </p>
+              </a>
+
+
+
+        </li>
+              <!-- List group item -->
+              <li class="hover:bg-gray-100 p-4 border-b">
+
+
+                <a href="#!" class="text-muted">
+                  <h5 class="mb-1 text-gray-800">Nirmala Chauhan</h5>
+                  <p class="mb-0 text-sm">
+                      Morbi maximus urna lobortis elit sollicitudin sollicitudieget elit vel pretium.
+                    </p>
+                </a>
+
+
+
+          </li>
+              <!-- List group item -->
+              <li class="hover:bg-gray-100  p-4">
+
+
+                <a href="#!" class="text-muted">
+                  <h5 class="mb-1 text-gray-800">Sina Ray</h5>
+                  <p class="mb-0 text-sm">
+                          Sed aliquam augue sit amet mauris volutpat hendrerit sed nunc eu diam.
+                        </p>
+                    </a>
+
+
+
+              </li>
+            </ul>
+          </div>
+          <div class="border-t p-3 flex justify-center items-center" >
+            <a href="#" class="text-sm hover:text-blue-500">View All Notifications</a>
+
+          </div>
+           </div>
+          </div>
+
+
+
+
+
+
+
+    <div class="dropdown relative md:static">
+
+      <button class="menu-btn focus:outline-none focus:shadow-outline flex flex-wrap items-center">
+
+        <div class="relative">
+          <img class="w-10 h-10 rounded-full" src="./assets/images/avatar/avatar-1.jpg" alt="">
+          <span class="bottom-0 left-7 absolute  w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+      </div>
+
+
+      </button>
+      <button class="fixed top-0 left-0 z-10 w-full h-full menu-overflow hidden"></button>
+
+
+
+      <div class="border text-gray-500 menu  lg:w-44 md:w-full rounded-md bg-white shadow-md absolute z-20 right-4  mt-5 pt-2 animated faster hidden">
+
+
+          <div class="">
+
+
+            <div class="lh-1 border-b pb-3 px-3 pt-1">
+              <h5 class="mb-0 text-md text-gray-800"> John E. Grainger</h5>
+              <a href="#!" class="text-sm">View my profile</a>
+            </div>
+
+          </div>
+
+          <ul class="list-unstyled">
+
+            <li>
+              <a class="flex items-center text-sm text-gray-600 hover:text-blue-500 hover:bg-blue-100 px-3 py-2.5" href="#!">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user me-2 icon-xxs dropdown-item-icon"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>Edit
+                Profile
+              </a>
+            </li>
+            <li>
+              <a class="flex items-center text-sm text-gray-600 hover:text-blue-500 hover:bg-blue-100 px-3 py-2.5" href="#!">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity me-2 icon-xxs dropdown-item-icon"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>Activity Log
+              </a>
+
+
+            </li>
+
+
+            <li>
+              <a class="flex items-center text-sm text-gray-600 hover:text-blue-500 hover:bg-blue-100 px-3 py-2.5" href="#!">
+
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings me-2 icon-xxs dropdown-item-icon"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>Settings
+              </a>
+            </li>
+            <li>
+              <a class="flex items-center text-sm text-gray-600 hover:text-blue-500 hover:bg-blue-100 px-3 py-2.5" href="#!">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-power me-2 icon-xxs dropdown-item-icon"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>Sign Out
+              </a>
+            </li>
+          </ul>
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+   </div>
+   </div>
+
+
+
+</header>
+<div class="lg:pl-[19.5rem] porse">
+<div class="max-w-3xl mx-auto pt-10 xl:max-w-none xl:ml-0 xl:pl-16 xl:pr-[24rem]">
+
+  <header class="border-b pb-6 mb-10 dark:border-gray-700">
+    <p class="mb-2 text-sm font-semibold text-blue-600">Components</p>
+    <h1 class="block text-2xl font-bold text-gray-800 sm:text-3xl dark:text-white">Accordion</h1>
+
+
+    <!-- End Alert -->
+  </header>
+  <div>
+
+    <h2 id="example" class="scroll-mt-24">
+      <a class="group relative text-lg font-bold text-gray-800 dark:text-white" href="#example">
+        <span class="absolute top-1 -left-4 inline-block flex-shrink-0 opacity-0 transition-all group-hover:opacity-100 group-hover:-left-6 before:absolute before:top-0 before:left-0 before:w-[2rem] before:h-full">
+          <svg class="w-3.5 h-3.5 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M11 11H15H11ZM11 11V6H5V11H11ZM11 11V15V11ZM11 11H5V6H1H5V1V6H11V1V6H15H11V11ZM5 11V15V11ZM5 11H1H5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </span>
+        Example
+      </a>
+    </h2>
+    <p class="mt-1 text-gray-600 dark:text-gray-400 ">Click the accordions below to expand/collapse the accordion content.</p>
+<!-- <div>
+    <div>
+      <div class="bg-slate-100 w-[12rem] rounded-lg p-1 relative h-[3rem] btn-content cursor-pointer mx-auto sm:mx-0">
+        <div class="py-2 px-[2.7rem] bg-white h-[80%] top-1/2 -translate-y-1/2 absolute btn-bg transition-all duration-500 shadow-xl shadow-slate-400/40 rounded-md"></div>
+
+     <a href="#" class="absolute top-1/2 -translate-y-1/2 left-5 text-sm font-medium text-slate-500">Personal</a>
+     <a href="#" class="absolute top-1/2 -translate-y-1/2 right-5 text-sm font-medium text-slate-500">Business</a>
+
+
+    </div>
+    </div>
+    <div class="personal" id="p">
+    0000
+    </div>
+    <div class="Business hidden" id="b">
+      11111
+    </div>
+  </div> -->
+
+<div class="border py-6 mt-6 px-6 rounded-md">
+
+  <div class="question">
+    <h4 class="text-lg text-gray-800 font-bold py-3">When and how it should be used?</h4>
+    <div class="faqAnswer text-md text-gray-600 font-medium pb-4" style="display: none;">
+        An HTML accordion is a type of user interface component that allows content to be collapsed and
+        expanded in a space-saving way. It is typically used when there is a lot of content to display, but
+        the available space is limited. <br>
+        <span class="hidden">
+                Here are some situations where an HTML accordion can be used:<br><br>
+
+                Frequently asked questions (FAQs): An accordion can be used to display a list of questions and answers. The questions can be displayed in a collapsed state, and users can expand them to view the answers.<br><br>
+
+                Product descriptions: If you have a large number of product descriptions on a page, an accordion can be used to collapse and expand each description. This allows users to quickly scan the product titles and expand the descriptions for the ones they are interested in.<br><br>
+
+                Tutorials or instructional content: An accordion can be used to present instructional content in a step-by-step manner. Each step can be displayed in a collapsed state, and users can expand each step to view the instructions.<br><br>
+
+            To create an accordion in HTML, you can use a combination of HTML, CSS, and JavaScript. There are also several pre-built accordion plugins available that you can use to create an accordion without having to write any code yourself.<br>
+            </span>
+
+    </div>
+</div>
+
+<div class="question">
+    <h4 class="open text-lg text-gray-800 font-bold py-3">What's an accordion?</h4>
+    <div class="faqAnswer  text-md text-gray-600 font-medium pb-4" style="display: block;">
+        The accordion is a graphical control element comprising a vertically stacked list of items, suck as
+        labels or thumbnails. An accordion is similar in purpose to a tabbed interface, a list of items
+        where exactly one item is opened into a panel.<br>
+        <span class="hidden">
+                An accordion is made up of a series of collapsible panels, also called cards, that contain content such as text, images, or other HTML elements. When a user clicks on a panel, the panel expands to reveal its content, and all other panels collapse to their original state. This allows the user to focus on one panel at a time and saves space by hiding the content of the other panels.<br><br>
+
+                In HTML, an accordion can be created using a combination of HTML, CSS, and JavaScript. There are also several pre-built accordion plugins available that you can use to create an accordion without having to write any code yourself.<br><br>
+
+                Accordions are commonly used in web design to display frequently asked questions, product descriptions, tutorials, or any other content that can benefit from a space-saving and organized presentation.
+            </span>
+
+    </div>
+</div>
+
+<div class="question">
+    <h4 class="text-lg text-gray-800 font-bold py-3">What if the user clicks on a collapsed card while another card is open?</h4>
+    <div class="faqAnswer  text-md text-gray-600 font-medium pb-4">
+        If a user clicks on a collapsed card while another card is open in an accordion, there are several
+        ways to handle this interaction. Here are a few possible options:<br><br>
+
+            Close the currently open card: If the user clicks on a collapsed card while another card is open, you can choose to close the open card and expand the one the user clicked on. This ensures that only one card is open at a time, which can help prevent clutter and confusion.<br><br>
+        <span class="hidden">
+                Keep both cards open: Alternatively, you can choose to keep both cards open, which can be useful if the content in both cards is related and the user may need to refer to both at the same time.<br><br>
+
+                Do nothing: Another option is to do nothing when the user clicks on a collapsed card while another card is open. This is not ideal, as it can lead to confusion and frustration for the user if they expect the card they clicked on to open.<br><br>
+
+                Regardless of which option you choose, it's important to communicate the behavior of the accordion to the user, so they know what to expect when they interact with it. You can do this by adding labels to the accordion indicating that only one card can be open at a time or by animating the opening and closing of the cards to provide visual feedback to the user.
+                <br><br>
+            </span>
+
+    </div>
+</div>
+
+<div class="question">
+    <h4 class="text-lg text-gray-800 font-bold py-3">How to choose an icon to indicate the expansion?</h4>
+    <div class="faqAnswer  text-md text-gray-600 font-medium pb-4">
+        When choosing an icon to indicate expansion in an accordion, you want to choose an icon that is
+        clear and easy to understand. Here are a few tips to keep in mind:<br><br>
+
+            Use a plus/minus icon: One of the most common icons used to indicate expansion is a plus or minus icon. A plus icon typically indicates that the content can be expanded, while a minus icon indicates that the content is currently expanded and can be collapsed.<br>
+        <span class="hidden">
+                Use an arrow icon: Another option is to use an arrow icon pointing down to indicate that the content can be expanded and pointing up to indicate that the content is currently expanded and can be collapsed.<br><br>
+
+                Use a caret icon: A caret icon is another common choice for indicating expansion. A caret pointing down can be used to indicate that the content can be expanded, while a caret pointing up can be used to indicate that the content is currently expanded and can be collapsed.<br><br>
+
+                Use a custom icon: If none of the above icons work for your specific use case, you can consider using a custom icon that better fits the style and branding of your website or application.<br><br>
+
+                When choosing an icon, it's important to test it with users to ensure that it is clear and easy to understand. You can also use A/B testing to compare the effectiveness of different icons and choose the one that performs best.
+            </span>
+
+    </div>
+</div>
+
+
+
+</div>
+
+
+
+
+  </div>
+  <div class="fixed z-20 top-[3.8125rem] bottom-0 right-0 w-[19.5rem] py-10 overflow-y-auto hidden xl:block ">
+    <h5 class="mb-3 text-sm font-semibold text-gray-800 dark:text-gray-300">On this page</h5>
+    <ul>
+      <li data-hs-scrollspy-group="">
+        <a href="#basic-usage" class="block py-0.5 text-sm font-medium leading-6 text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300 hs-scrollspy-active:text-blue-600 dark:hs-scrollspy-active:text-blue-400 active">Basic usage</a>
+        <ul>
+          <li class="ml-4">
+            <a href="#example" class="group flex items-start gap-x-2 py-0.5 text-sm text-gray-700 leading-6 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300 hs-scrollspy-active:text-blue-600 dark:hs-scrollspy-active:text-blue-400 active">
+              <svg class="w-2 h-6 text-gray-400 overflow-visible group-hover:text-gray-600 dark:text-gray-600 dark:group-hover:text-gray-500" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 2L10.6464 7.64645C10.8417 7.84171 10.8417 8.15829 10.6464 8.35355L5 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+              </svg>
+              Example
+            </a>
+          </li>
+          <li class="ml-4">
+            <a href="#always-open" class="group flex items-start gap-x-2 py-0.5 text-sm text-gray-700 leading-6 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300 hs-scrollspy-active:text-blue-600 dark:hs-scrollspy-active:text-blue-400">
+              <svg class="w-2 h-6 text-gray-400 overflow-visible group-hover:text-gray-600 dark:text-gray-600 dark:group-hover:text-gray-500" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 2L10.6464 7.64645C10.8417 7.84171 10.8417 8.15829 10.6464 8.35355L5 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+              </svg>
+              Always open
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#nested" class="block py-0.5 text-sm font-medium leading-6 text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300 hs-scrollspy-active:text-blue-600 dark:hs-scrollspy-active:text-blue-400">Nested</a></li>
+      <li><a href="#no-arrow" class="block py-0.5 text-sm font-medium leading-6 text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300 hs-scrollspy-active:text-blue-600 dark:hs-scrollspy-active:text-blue-400">No arrow</a></li>
+      <li><a href="#with-arrow" class="block py-0.5 text-sm font-medium leading-6 text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300 hs-scrollspy-active:text-blue-600 dark:hs-scrollspy-active:text-blue-400">With arrow</a></li>
+      <li><a href="#with-title-and-arrow-stretched" class="block py-0.5 text-sm font-medium leading-6 text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300 hs-scrollspy-active:text-blue-600 dark:hs-scrollspy-active:text-blue-400">With title and arrow stretched</a></li>
+      <li><a href="#bordered" class="block py-0.5 text-sm font-medium leading-6 text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300 hs-scrollspy-active:text-blue-600 dark:hs-scrollspy-active:text-blue-400">Bordered</a></li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+  </div>
+
+
+</div>
+
+            </div>
+
+
+
+      </div>
+
+
+
+
+
+      </div>
+
+    </div>
+
+
+
+   <script type="module" src="./assets/js/main.js"></script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+                $(".question h4").click(function() {
+                    if ($('.faqAnswer').is(':visible')) {
+                        $(this).parent().find('.hidden').slideUp();
+                        $(this).parent().find('button').html('Read more');
+                        $(".faqAnswer").slideUp(300);
+                        $('.question h4').removeClass('open');
+                    }
+
+                    if ($(this).next(".faqAnswer").is(':visible')) {
+                        $(this).parent().find('.hidden').slideUp();
+                        $(this).next(".faqAnswer").slideUp(300);
+                        $(this).parent().find('button').html('Read more');
+                        $(this).removeClass('open');
+                    }
+                    else {
+                        $(this).next(".faqAnswer").slideDown(300);
+                        $(this).addClass('open');
+
+                    }
+                });
+
+                $('button').click(function() {
+                    $(this).parent().find('.hidden').slideToggle();
+                    $(this).html('Read less');
+                })
+            });
+    </script>
+
+
+
+
+
+</body>
+
+
+   </html>
