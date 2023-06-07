@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Buttons</title>
+
+        {{> head }}
+
+    </head>
+
+    <body>
+
+        <div class="flex flex-auto flex-col">
+            <div class="flex flex-auto min-w-0">
+                <div>
+                    {{> docs-sidebar }}
+                </div>
+                <div
+                    class="flex flex-col flex-auto min-h-screen min-w-0 relative w-full">
+                    <header
+                        class="bg-gray-100   lg:ml-[300px] sticky right-0 left-0 border-b z-10">
+                        <div
+                            class="flex justify-between items-center h-[64px] p-5">
+                            <div class="flex items-center">
+                                <div>
+                                    <a href="#!">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5"
+                                            stroke="currentColor"
+                                            class="w-6 h-6">
+                                            <path stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="M3.75 6.75h14.5M3.75 12h14.5m-14.5 5.25h14.5" />
+                                        </svg>
+
+                                    </a>
+                                </div>
+                                <div class="relative ml-4">
+                                    <input type="search"
+                                        class="pl-10 border border-gray-200 rounded-md w-80">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor"
+                                        class="pointer-events-none absolute inset-y-0 left-0 ml-4 h-full w-4  transition">
+                                        <path stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                                    </svg>
+
+                                </div>
+                            </div>
+                            <div>
+
+                                <div class="flex items-center">
+                                    <div
+                                        class="dropdown relative md:static mr-3">
+
+                                        <a href="#"
+                                            class="menu-btn focus:outline-none focus:shadow-outline flex items-center justify-center rounded-full  text-gray-600 hover:bg-gray-200 h-10 w-10 text-center">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="18" height="18"
+                                                viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="feather feather-bell icon-xs"><path
+                                                    d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path
+                                                    d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+
+                                        </a>
+                                        <button
+                                            class="fixed top-0 left-0 z-10 w-full h-full menu-overflow hidden"></button>
+
+                                        <div
+                                            class="border text-gray-500 menu  lg:w-80 md:w-full rounded-md bg-gray-100  shadow-md absolute z-20 right-4  mt-5 pt-2 animated faster hidden">
+
+                                            <div class="border-b px-3 pb-3 flex
+              justify-between items-center">
+                                                <p
+                                                    class="mb-0 text-gray-800 font-medium text-md">Notifications</p>
+                                                <a href="#!" class="text-muted">
+                                                    <span>
+                                                        <svg
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            width="16"
+                                                            height="16"
+                                                            viewBox="0 0 24 24"
+                                                            fill="none"
+                                                            stroke="currentColor"
+                                                            stroke-width="2"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            class="feather feather-settings me-1 icon-xs"><circle
+                                                                cx="12" cy="12"
+                                                                r="3"></circle><path
+                                                                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                                                    </span>
+                                                </a>
+                                            </div>
+
+                                            <!-- List group -->
+                                            <div class="h-80" data-simplebar>
+                                                <ul class="list-none">
+                                                    <!-- List group item -->
+                                                    <li
+                                                        class="bg-gray-100 p-4 border-b">
+
+                                                        <a href="#!"
+                                                            class="text-muted">
+                                                            <h5
+                                                                class="mb-1 text-gray-800">Rishi
+                                                                Chopra</h5>
+                                                            <p
+                                                                class="mb-0 text-sm">
+                                                                Mauris blandit
+                                                                erat id nunc
+                                                                blandit, ac
+                                                                eleifend dolor
+                                                                pretium.
+                                                            </p>
+                                                        </a>
+
+                                                    </li>
+                                                    <!-- List group item -->
+                                                    <li
+                                                        class="hover:bg-gray-100 p-4 border-b">
+
+                                                        <a href="#!"
+                                                            class="text-muted">
+                                                            <h5
+                                                                class="mb-1 text-gray-800">Neha
+                                                                Kannned</h5>
+                                                            <p
+                                                                class="mb-0 text-sm">
+                                                                Proin at elit
+                                                                vel est
+                                                                condimentum
+                                                                elementum id in
+                                                                ante. Maecenas
+                                                                et sapien metus.
+                                                            </p>
+                                                        </a>
+
+                                                    </li>
+                                                    <!-- List group item -->
+                                                    <li
+                                                        class="hover:bg-gray-100 p-4 border-b">
+
+                                                        <a href="#!"
+                                                            class="text-muted">
+                                                            <h5
+                                                                class="mb-1 text-gray-800">Nirmala
+                                                                Chauhan</h5>
+                                                            <p
+                                                                class="mb-0 text-sm">
+                                                                Morbi maximus
+                                                                urna lobortis
+                                                                elit
+                                                                sollicitudin
+                                                                sollicitudieget
+                                                                elit vel
+                                                                pretium.
+                                                            </p>
+                                                        </a>
+
+                                                    </li>
+                                                    <!-- List group item -->
+                                                    <li
+                                                        class="hover:bg-gray-100  p-4">
+
+                                                        <a href="#!"
+                                                            class="text-muted">
+                                                            <h5
+                                                                class="mb-1 text-gray-800">Sina
+                                                                Ray</h5>
+                                                            <p
+                                                                class="mb-0 text-sm">
+                                                                Sed aliquam
+                                                                augue sit amet
+                                                                mauris volutpat
+                                                                hendrerit sed
+                                                                nunc eu diam.
+                                                            </p>
+                                                        </a>
+
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div
+                                                class="border-t p-3 flex justify-center items-center">
+                                                <a href="#"
+                                                    class="text-sm hover:text-indigo-500">View
+                                                    All Notifications</a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="dropdown relative md:static">
+
+                                        <button
+                                            class="menu-btn focus:outline-none focus:shadow-outline flex flex-wrap items-center">
+
+                                            <div class="relative">
+                                                <img
+                                                    class="w-10 h-10 rounded-full"
+                                                    src="./assets/images/avatar/avatar-1.jpg"
+                                                    alt>
+                                                <span
+                                                    class="bottom-0 left-7 absolute  w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+                                            </div>
+
+                                        </button>
+                                        <button
+                                            class="fixed top-0 left-0 z-10 w-full h-full menu-overflow hidden"></button>
+
+                                        <div
+                                            class="border text-gray-500 menu  lg:w-44 md:w-full rounded-md bg-gray-100  shadow-md absolute z-20 right-4  mt-5 pt-2 animated faster hidden">
+
+                                            <div class>
+
+                                                <div
+                                                    class="lh-1 border-b pb-3 px-3 pt-1">
+                                                    <h5
+                                                        class="mb-0 text-md text-gray-800">
+                                                        John E. Grainger</h5>
+                                                    <a href="#!" class="text-sm">View
+                                                        my profile</a>
+                                                </div>
+
+                                            </div>
+
+                                            <ul class="list-unstyled">
+
+                                                <li>
+                                                    <a
+                                                        class="flex items-center text-sm text-gray-600 hover:text-indigo-500 hover:bg-indigo-100 px-3 py-2.5"
+                                                        href="#!">
+                                                        <svg
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            width="14"
+                                                            height="14"
+                                                            viewBox="0 0 24 24"
+                                                            fill="none"
+                                                            stroke="currentColor"
+                                                            stroke-width="2"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            class="feather feather-user me-2 icon-xxs dropdown-item-icon"><path
+                                                                d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle
+                                                                cx="12" cy="7"
+                                                                r="4"></circle></svg>Edit
+                                                        Profile
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        class="flex items-center text-sm text-gray-600 hover:text-indigo-500 hover:bg-indigo-100 px-3 py-2.5"
+                                                        href="#!">
+                                                        <svg
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            width="14"
+                                                            height="14"
+                                                            viewBox="0 0 24 24"
+                                                            fill="none"
+                                                            stroke="currentColor"
+                                                            stroke-width="2"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            class="feather feather-activity me-2 icon-xxs dropdown-item-icon"><polyline
+                                                                points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>Activity
+                                                        Log
+                                                    </a>
+
+                                                </li>
+
+                                                <li>
+                                                    <a
+                                                        class="flex items-center text-sm text-gray-600 hover:text-indigo-500 hover:bg-indigo-100 px-3 py-2.5"
+                                                        href="#!">
+
+                                                        <svg
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            width="14"
+                                                            height="14"
+                                                            viewBox="0 0 24 24"
+                                                            fill="none"
+                                                            stroke="currentColor"
+                                                            stroke-width="2"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            class="feather feather-settings me-2 icon-xxs dropdown-item-icon"><circle
+                                                                cx="12" cy="12"
+                                                                r="3"></circle><path
+                                                                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>Settings
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        class="flex items-center text-sm text-gray-600 hover:text-indigo-500 hover:bg-indigo-100 px-3 py-2.5"
+                                                        href="#!">
+                                                        <svg
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            width="14"
+                                                            height="14"
+                                                            viewBox="0 0 24 24"
+                                                            fill="none"
+                                                            stroke="currentColor"
+                                                            stroke-width="2"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            class="feather feather-power me-2 icon-xxs dropdown-item-icon"><path
+                                                                d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line
+                                                                x1="12" y1="2"
+                                                                x2="12" y2="12"></line></svg>Sign
+                                                        Out
+                                                    </a>
+                                                </li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </header>
+                    <div class="lg:pl-[19.5rem] porse">
+                        <div
+                            class="max-w-3xl mx-auto pt-10 xl:max-w-none xl:ml-0 xl:pl-16 xl:pr-[24rem]">
+
+                            <header
+                                class="border-b pb-6 mb-10 dark:border-gray-700">
+                                <p
+                                    class="mb-2 text-sm font-semibold text-indigo-600">Components</p>
+                                <h1
+                                    class="block text-2xl font-bold text-gray-800 sm:text-3xl ">Buttons</h1>
+
+                                <!-- End Alert -->
+                            </header>
+                            <!-- Solid Colors -->
+                            <div class="mb-10">
+                                <div>
+
+                                    <h2 id="solid-background-color-variants"
+                                        class="scroll-mt-24">
+                                        <a
+                                            class="group relative text-lg font-bold text-gray-800 "
+                                            href="#solid-color-variants">
+                                            <span
+                                                class="absolute top-1 -left-4 inline-block flex-shrink-0 opacity-0 transition-all group-hover:opacity-100 group-hover:-left-6 before:absolute before:top-0 before:left-0 before:w-[2rem] before:h-full">
+                                                <svg
+                                                    class="w-3.5 h-3.5 text-indigo-600"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="14" height="14"
+                                                    fill="currentColor"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M11 11H15H11ZM11 11V6H5V11H11ZM11 11V15V11ZM11 11H5V6H1H5V1V6H11V1V6H15H11V11ZM5 11V15V11ZM5 11H1H5Z"
+                                                        stroke="currentColor"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"></path>
+                                                </svg>
+                                            </span>
+                                            Buttons
+                                        </a>
+                                    </h2>
+                                    <p
+                                        class="mt-1 text-gray-600  ">Lorem ipsum
+                                        dolor sit amet consectetur, adipisicing
+                                        elit. Earum ipsum nihil dolore quam
+                                        animi veritatis!</p>
+
+                                </div>
+
+                                <div class="border mt-6 rounded-md">
+                                    <!-- code -->
+                                    <div class="py-6  px-6">
+
+    <!-- Primary Button -->
+    <button type="button" class="mr-1 py-2 px-4 bg-indigo-500 text-white border-indigo-500 hover:bg-indigo-700 rounded-md focus:bg-indigo-700 focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-indigo-300">Primary</button>
+
+    <!-- Secondary Button -->
+    <button type="button" class="mr-1 py-2 px-4 bg-gray-500 text-white border-gray-500 hover:bg-gray-700 rounded-md focus:bg-gray-700 focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-gray-300">Secondary</button>
+
+    <!-- Success Button -->
+    <button type="button" class="mr-1 py-2 px-4 bg-green-500 text-white border-green-700 hover:bg-green-700 rounded-md focus:bg-green-700 focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-green-300">Secondary</button>
+
+    <!-- Danger Button -->
+    <button type="button" class="mr-1 py-2 px-4 bg-red-500 text-white border-red-500 hover:bg-red-700 rounded-md focus:bg-red-700 focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-red-300">Danger</button>
+
+    <!-- Warning Button -->
+    <button type="button" class="mr-1 py-2 px-4 bg-yellow-500 text-gray-800 border-yellow-500 hover:bg-yellow-600 rounded-md hover:text-white focus:text-white focus:bg-yellow-600 focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-yellow-300">Warning</button>
+
+    <!-- Info Button -->
+    <button type="button" class="mr-1 py-2 px-4 bg-cyan-500 text-white border-cyan-500 hover:bg-cyan-700 rounded-md focus:bg-cyan-700 focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-cyan-300">Info</button>
+
+    <!-- Light Button -->
+    <button type="button" class="mr-1 py-2 px-4 bg-gray-100 text-gray-500 border-gray-100 hover:bg-gray-300 rounded-md focus:bg-gray-300 focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-gray-300">Light</button>
+
+    <!-- Dark Button -->
+    <button type="button" class="mr-1 py-2 px-4 bg-gray-800 text-white border-gray-800 hover:bg-gray-900 rounded-md focus:bg-gray-900 focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-gray-900">Dark</button>
+
+
+
+                                    </div>
+
+                                    <!-- prism code -->
+                                    <div class="relative">
+                                        <pre class="language-markup" tabindex="0"><code class="language-markup"><span class="token comment">&lt;!-- Primary Button --&gt;</span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mr-1 py-2 px-4 bg-indigo-500 text-white border-indigo-500 hover:bg-indigo-700 rounded-md focus:bg-indigo-700 focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-indigo-300<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Primary<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+ <span class="token comment">&lt;!-- Secondary Button --&gt;</span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mr-1 py-2 px-4 bg-gray-500 text-white border-gray-500 hover:bg-gray-700 rounded-md focus:bg-gray-700 focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-gray-300<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Secondary<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+ <span class="token comment">&lt;!-- Success Button --&gt;</span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mr-1 py-2 px-4 bg-green-500 text-white border-green-700 hover:bg-green-700 rounded-md focus:bg-green-700 focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-green-300<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Secondary<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+ <span class="token comment">&lt;!-- Danger Button --&gt;</span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mr-1 py-2 px-4 bg-red-500 text-white border-red-500 hover:bg-red-700 rounded-md focus:bg-red-700 focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-red-300<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Danger<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+ <span class="token comment">&lt;!-- Warning Button --&gt;</span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mr-1 py-2 px-4 bg-yellow-500 text-gray-800 border-yellow-500 hover:bg-yellow-600 rounded-md hover:text-white focus:text-white focus:bg-yellow-600 focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-yellow-300<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Warning<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+ <span class="token comment">&lt;!-- Info Button --&gt;</span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mr-1 py-2 px-4 bg-cyan-500 text-white border-cyan-500 hover:bg-cyan-700 rounded-md focus:bg-cyan-700 focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-cyan-300<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Info<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+ <span class="token comment">&lt;!-- Light Button --&gt;</span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mr-1 py-2 px-4 bg-gray-100 text-gray-500 border-gray-100 hover:bg-gray-300 rounded-md focus:bg-gray-300 focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-gray-300<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Light<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+ <span class="token comment">&lt;!-- Dark Button --&gt;</span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mr-1 py-2 px-4 bg-gray-800 text-white border-gray-800 hover:bg-gray-900 rounded-md focus:bg-gray-900 focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-gray-900<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Dark<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+ </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="mb-10">
+                                <div>
+
+                                    <h2 id="solid-background-color-variants"
+                                        class="scroll-mt-24">
+                                        <a
+                                            class="group relative text-lg font-bold text-gray-800 "
+                                            href="#solid-color-variants">
+                                            <span
+                                                class="absolute top-1 -left-4 inline-block flex-shrink-0 opacity-0 transition-all group-hover:opacity-100 group-hover:-left-6 before:absolute before:top-0 before:left-0 before:w-[2rem] before:h-full">
+                                                <svg
+                                                    class="w-3.5 h-3.5 text-indigo-600"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="14" height="14"
+                                                    fill="currentColor"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M11 11H15H11ZM11 11V6H5V11H11ZM11 11V15V11ZM11 11H5V6H1H5V1V6H11V1V6H15H11V11ZM5 11V15V11ZM5 11H1H5Z"
+                                                        stroke="currentColor"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"></path>
+                                                </svg>
+                                            </span>
+                                            Outline Buttons
+                                        </a>
+                                    </h2>
+                                    <p
+                                        class="mt-1 text-gray-600  ">Lorem ipsum
+                                        dolor sit amet consectetur, adipisicing
+                                        elit. Earum ipsum nihil dolore quam
+                                        animi veritatis!</p>
+
+                                </div>
+
+                                <div class="border mt-6 rounded-md">
+                                    <!-- code -->
+                                    <div class="py-6  px-6">
+
+    <!-- Primary Button -->
+    <button type="button" class="mr-1 py-2 px-4  text-indigo-500 hover:text-white border border-indigo-500 hover:bg-indigo-700 rounded-md focus:bg-indigo-700 focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-indigo-300">Primary</button>
+    <!-- Secondary Button -->
+    <button type="button" class="mr-1 py-2 px-4 text-gray-500 hover:text-white border border-gray-500 hover:bg-gray-700 rounded-md focus:bg-gray-700 focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-gray-300">Secondary</button>
+    <!-- Success Button -->
+    <button type="button" class="mr-1 py-2 px-4 text-green-700 hover:text-white border border-green-700 hover:bg-green-900 rounded-md focus:bg-green-900 focus:outline-none focus:ring-offset-2 focus:ring-2  focus:ring-green-300">Success</button>
+    <!-- Danger Button -->
+    <button type="button" class="mr-1 py-2 px-4 text-red-500 hover:text-white border border-red-500 hover:bg-red-500 rounded-md focus:bg-red-700 focus:outline-none focus:ring-offset-2 focus:ring-2  focus:ring-red-300">Danger</button>
+    <!-- Warning Button -->
+    <button type="button" class="mr-1 py-2 px-4 text-yellow-500 hover:text-white border border-yellow-500 hover:bg-yellow-500 rounded-md focus:bg-yellow-600 focus:outline-none focus:ring-offset-2 focus:ring-2  focus:ring-yellow-300">Warning</button>
+    <!-- Info Button -->
+    <button type="button" class="mr-1 py-2 px-4 text-cyan-500 hover:text-white border border-cyan-500 hover:bg-cyan-500 rounded-md focus:bg-cyan-700 focus:outline-none focus:ring-offset-2 focus:ring-2  focus:ring-cyan-300">Info</button>
+    <!-- Light Button -->
+    <button type="button" class="mr-1 py-2 px-4 text-gray-500 hover:text-gray-500 border border-gray-200 hover:bg-gray-200 rounded-md focus:bg-gray-300 focus:outline-none focus:ring-offset-2 focus:ring-2  focus:ring-gray-200">Light</button>
+    <!-- Dark Button -->
+    <button type="button" class="mr-1 py-2 px-4 text-gray-800 hover:text-white focus:text-white border border-gray-900 hover:bg-gray-900 rounded-md focus:bg-gray-900 focus:outline-none focus:ring-offset-2 focus:ring-2  focus:ring-gray-300">Dark</button>
+
+
+
+                                    </div>
+
+                                    <!-- prism code -->
+                                    <div class="relative">
+                                        <pre class="language-markup" tabindex="0"><code class="language-markup"> <span class="token comment">&lt;!-- Primary Button --&gt;</span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mr-1 py-2 px-4  text-indigo-500 hover:text-white border border-indigo-500 hover:bg-indigo-700 rounded-md focus:bg-indigo-700 focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-indigo-300<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Primary<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+ <span class="token comment">&lt;!-- Secondary Button --&gt;</span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mr-1 py-2 px-4 text-gray-500 hover:text-white border border-gray-500 hover:bg-gray-700 rounded-md focus:bg-gray-700 focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-gray-300<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Secondary<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+ <span class="token comment">&lt;!-- Success Button --&gt;</span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mr-1 py-2 px-4 text-green-700 hover:text-white border border-green-700 hover:bg-green-900 rounded-md focus:bg-green-900 focus:outline-none focus:ring-offset-2 focus:ring-2  focus:ring-green-300<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Success<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+ <span class="token comment">&lt;!-- Danger Button --&gt;</span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mr-1 py-2 px-4 text-red-500 hover:text-white border border-red-500 hover:bg-red-500 rounded-md focus:bg-red-700 focus:outline-none focus:ring-offset-2 focus:ring-2  focus:ring-red-300<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Danger<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+ <span class="token comment">&lt;!-- Warning Button --&gt;</span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mr-1 py-2 px-4 text-yellow-500 hover:text-white border border-yellow-500 hover:bg-yellow-500 rounded-md focus:bg-yellow-600 focus:outline-none focus:ring-offset-2 focus:ring-2  focus:ring-yellow-300<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Warning<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+ <span class="token comment">&lt;!-- Info Button --&gt;</span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mr-1 py-2 px-4 text-cyan-500 hover:text-white border border-cyan-500 hover:bg-cyan-500 rounded-md focus:bg-cyan-700 focus:outline-none focus:ring-offset-2 focus:ring-2  focus:ring-cyan-300<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Info<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+ <span class="token comment">&lt;!-- Light Button --&gt;</span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mr-1 py-2 px-4 text-gray-500 hover:text-gray-500 border border-gray-200 hover:bg-gray-200 rounded-md focus:bg-gray-300 focus:outline-none focus:ring-offset-2 focus:ring-2  focus:ring-gray-200<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Light<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+ <span class="token comment">&lt;!-- Dark Button --&gt;</span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mr-1 py-2 px-4 text-gray-800 hover:text-white focus:text-white border border-gray-900 hover:bg-gray-900 rounded-md focus:bg-gray-900 focus:outline-none focus:ring-offset-2 focus:ring-2  focus:ring-gray-300<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Dark<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+ </code></pre>
+ </div>
+
+                                </div>
+
+                            </div>
+                            <div class="mb-10">
+                                <div>
+
+                                    <h2 id="solid-background-color-variants"
+                                        class="scroll-mt-24">
+                                        <a
+                                            class="group relative text-lg font-bold text-gray-800 "
+                                            href="#solid-color-variants">
+                                            <span
+                                                class="absolute top-1 -left-4 inline-block flex-shrink-0 opacity-0 transition-all group-hover:opacity-100 group-hover:-left-6 before:absolute before:top-0 before:left-0 before:w-[2rem] before:h-full">
+                                                <svg
+                                                    class="w-3.5 h-3.5 text-indigo-600"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="14" height="14"
+                                                    fill="currentColor"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M11 11H15H11ZM11 11V6H5V11H11ZM11 11V15V11ZM11 11H5V6H1H5V1V6H11V1V6H15H11V11ZM5 11V15V11ZM5 11H1H5Z"
+                                                        stroke="currentColor"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"></path>
+                                                </svg>
+                                            </span>
+                                            Soft Buttons
+                                        </a>
+                                    </h2>
+                                    <p
+                                        class="mt-1 text-gray-600  ">Lorem ipsum
+                                        dolor sit amet consectetur, adipisicing
+                                        elit. Earum ipsum nihil dolore quam
+                                        animi veritatis!</p>
+
+                                </div>
+
+                                <div class="border mt-6 rounded-md">
+                                    <!-- code -->
+                                    <div class="py-6  px-6">
+
+    <!-- Primary Button -->
+    <button type="button" class="mr-1 py-2 px-4 bg-indigo-100 text-indigo-500 border-indigo-100 hover:bg-indigo-500 hover:text-white rounded-md focus:text-white focus:bg-indigo-700 focus:outline-none  focus:ring-2 ring-offset-white  focus:ring-indigo-300 focus:ring-offset-2">Primary</button>
+    <!-- Secondary Button -->
+    <button type="button" class="mr-1 py-2 px-4 bg-gray-100 text-gray-500 border-gray-500 hover:bg-gray-500 hover:text-white rounded-md focus:text-white  focus:bg-gray-700 focus:outline-none focus:ring-2 ring-offset-white focus:ring-gray-200 focus:ring-offset-2">Secondary</button>
+    <!-- Success Button -->
+    <button type="button" class="mr-1 py-2 px-4 bg-green-100 text-green-500 border-green-500 hover:bg-green-500 hover:text-white focus:text-white rounded-md focus:bg-green-700 focus:outline-none focus:ring-2 ring-offset-white focus:ring-green-100 focus:ring-offset-2">Success</button>
+    <!-- Danger Button -->
+    <button type="button" class="mr-1 py-2 px-4 bg-red-100 text-red-500 border-red-100 hover:bg-red-500 hover:text-white rounded-md focus:outline-none focus:ring-2 ring-offset-white focus:ring-red-100 focus:ring-offset-2">Danger</button>
+    <!-- Warning Button -->
+    <button type="button" class="mr-1 py-2 px-4 bg-yellow-100 text-yellow-500 border-yellow-100 hover:bg-yellow-500 hover:text-white rounded-md  focus:text-white focus:bg-yellow-500 focus:outline-none focus:ring-2 ring-offset-white focus:ring-yellow-100  focus:ring-offset-2 ">Warning</button>
+    <!-- Info Button -->
+    <button type="button" class="mr-1 py-2 px-4 bg-cyan-100 text-cyan-500 border-cyan-100 hover:bg-cyan-500 hover:text-white rounded-md focus:text-white focus:bg-cyan-500 focus:outline-none focus:ring-2 ring-offset-white focus:ring-cyan-300 focus:ring-offset-2">Info</button>
+    <!-- Light Button -->
+    <button type="button" class="mr-1 py-2 px-4 bg-gray-100 text-gray-500 border-gray-100 hover:bg-gray-500 hover:text-white rounded-md focus:bg-gray-300 focus:outline-none focus:ring-offset-2 focus:ring-2 ring-offset-white focus:ring-gray-300 focus:ring-offset-2">Light</button>
+    <!-- Dark Button -->
+    <button type="button" class="mr-1 py-2 px-4 bg-gray-100 text-gray-900 border-gray-800 hover:bg-gray-900 hover:text-white  focus:text-white rounded-md focus:bg-gray-900 focus:outline-none focus:ring-offset-2 focus:ring-2 ring-offset-white focus:ring-gray-400 focus:ring-offset-2">Dark</button>
+
+                                    </div>
+
+                                    <!-- prism code -->
+                                    <div class="relative">
+                                        <pre class="language-markup" tabindex="0"><code class="language-markup"> <span class="token comment">&lt;!-- Primary Button --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mr-1 py-2 px-4 bg-indigo-100 text-indigo-500 border-indigo-100 hover:bg-indigo-500 hover:text-white rounded-md focus:text-white focus:bg-indigo-700 focus:outline-none  focus:ring-2 ring-offset-white  focus:ring-indigo-300 focus:ring-offset-2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Primary<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!-- Secondary Button --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mr-1 py-2 px-4 bg-gray-100 text-gray-500 border-gray-500 hover:bg-gray-500 hover:text-white rounded-md focus:text-white  focus:bg-gray-700 focus:outline-none focus:ring-2 ring-offset-white focus:ring-gray-200 focus:ring-offset-2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Secondary<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!-- Success Button --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mr-1 py-2 px-4 bg-green-100 text-green-500 border-green-500 hover:bg-green-500 hover:text-white focus:text-white rounded-md focus:bg-green-700 focus:outline-none focus:ring-2 ring-offset-white focus:ring-green-100 focus:ring-offset-2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Success<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!-- Danger Button --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mr-1 py-2 px-4 bg-red-100 text-red-500 border-red-100 hover:bg-red-500 hover:text-white rounded-md focus:outline-none focus:ring-2 ring-offset-white focus:ring-red-100 focus:ring-offset-2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Danger<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!-- Warning Button --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mr-1 py-2 px-4 bg-yellow-100 text-yellow-500 border-yellow-100 hover:bg-yellow-500 hover:text-white rounded-md  focus:text-white focus:bg-yellow-500 focus:outline-none focus:ring-2 ring-offset-white focus:ring-yellow-100  focus:ring-offset-2 <span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Warning<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!-- Info Button --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mr-1 py-2 px-4 bg-cyan-100 text-cyan-500 border-cyan-100 hover:bg-cyan-500 hover:text-white rounded-md focus:text-white focus:bg-cyan-500 focus:outline-none focus:ring-2 ring-offset-white focus:ring-cyan-300 focus:ring-offset-2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Info<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!-- Light Button --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mr-1 py-2 px-4 bg-gray-100 text-gray-500 border-gray-100 hover:bg-gray-500 hover:text-white rounded-md focus:bg-gray-300 focus:outline-none focus:ring-offset-2 focus:ring-2 ring-offset-white focus:ring-gray-300 focus:ring-offset-2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Light<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!-- Dark Button --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mr-1 py-2 px-4 bg-gray-100 text-gray-900 border-gray-800 hover:bg-gray-900 hover:text-white  focus:text-white rounded-md focus:bg-gray-900 focus:outline-none focus:ring-offset-2 focus:ring-2 ring-offset-white focus:ring-gray-400 focus:ring-offset-2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Dark<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+                                        </code></pre>
+ </div>
+
+                                </div>
+
+                            </div>
+                            <div class="mb-10">
+                                <div>
+
+                                    <h2 id="solid-background-color-variants"
+                                        class="scroll-mt-24">
+                                        <a
+                                            class="group relative text-lg font-bold text-gray-800 "
+                                            href="#solid-color-variants">
+                                            <span
+                                                class="absolute top-1 -left-4 inline-block flex-shrink-0 opacity-0 transition-all group-hover:opacity-100 group-hover:-left-6 before:absolute before:top-0 before:left-0 before:w-[2rem] before:h-full">
+                                                <svg
+                                                    class="w-3.5 h-3.5 text-indigo-600"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="14" height="14"
+                                                    fill="currentColor"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M11 11H15H11ZM11 11V6H5V11H11ZM11 11V15V11ZM11 11H5V6H1H5V1V6H11V1V6H15H11V11ZM5 11V15V11ZM5 11H1H5Z"
+                                                        stroke="currentColor"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"></path>
+                                                </svg>
+                                            </span>
+                                           Sizes
+                                        </a>
+                                    </h2>
+                                    <p
+                                        class="mt-1 text-gray-600  ">Lorem ipsum
+                                        dolor sit amet consectetur, adipisicing
+                                        elit. Earum ipsum nihil dolore quam
+                                        animi veritatis!</p>
+
+                                </div>
+
+                                <div class="border mt-6 rounded-md">
+                                    <!-- code -->
+                                    <div class="py-6  px-6">
+
+    <!-- Large Button -->
+    <button type="button" class="mr-1 py-3 px-7 bg-indigo-500 text-white border-indigo-500 hover:bg-indigo-700 rounded-md focus:bg-indigo-700 focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-indigo-300">Large Button</button>
+   <!-- Default Button -->
+    <button type="button" class="mr-1 py-2 px-4 bg-indigo-500 text-white border-indigo-500 hover:bg-indigo-700 rounded-md focus:bg-indigo-700 focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-indigo-300">Default Button</button>
+    <!-- Small Button -->
+    <button type="button" class="mr-1 py-1 px-3 bg-indigo-500 text-white border-indigo-500 hover:bg-indigo-700 rounded-md focus:bg-indigo-700 focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-indigo-300">Small Button</button>
+</div>
+
+                                    <!-- prism code -->
+                                    <div class="relative">
+                                        <pre class="language-markup" tabindex="0"><code class="language-markup"><span class="token comment">&lt;!-- Large Button --&gt;</span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mr-1 py-3 px-7 bg-indigo-500 text-white border-indigo-500 hover:bg-indigo-700 rounded-md focus:bg-indigo-700 focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-indigo-300<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Large Button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+ <span class="token comment">&lt;!-- Default Button --&gt;</span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mr-1 py-2 px-4 bg-indigo-500 text-white border-indigo-500 hover:bg-indigo-700 rounded-md focus:bg-indigo-700 focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-indigo-300<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Default Button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+ <span class="token comment">&lt;!-- Small Button --&gt;</span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mr-1 py-1 px-3 bg-indigo-500 text-white border-indigo-500 hover:bg-indigo-700 rounded-md focus:bg-indigo-700 focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-indigo-300<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Small Button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span></code></pre>
+ </div>
+
+                                </div>
+
+                            </div>
+                            <div class="mb-10">
+                                <div>
+
+                                    <h2 id="solid-background-color-variants"
+                                        class="scroll-mt-24">
+                                        <a
+                                            class="group relative text-lg font-bold text-gray-800 "
+                                            href="#solid-color-variants">
+                                            <span
+                                                class="absolute top-1 -left-4 inline-block flex-shrink-0 opacity-0 transition-all group-hover:opacity-100 group-hover:-left-6 before:absolute before:top-0 before:left-0 before:w-[2rem] before:h-full">
+                                                <svg
+                                                    class="w-3.5 h-3.5 text-indigo-600"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="14" height="14"
+                                                    fill="currentColor"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M11 11H15H11ZM11 11V6H5V11H11ZM11 11V15V11ZM11 11H5V6H1H5V1V6H11V1V6H15H11V11ZM5 11V15V11ZM5 11H1H5Z"
+                                                        stroke="currentColor"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"></path>
+                                                </svg>
+                                            </span>
+                                           Block Button
+                                        </a>
+                                    </h2>
+                                    <p
+                                        class="mt-1 text-gray-600  ">Lorem ipsum
+                                        dolor sit amet consectetur, adipisicing
+                                        elit. Earum ipsum nihil dolore quam
+                                        animi veritatis!</p>
+
+                                </div>
+
+                                <div class="border mt-6 rounded-md">
+                                    <!-- code -->
+                                    <div class="py-6  px-6">
+<button type="button" class="mb-3 w-full py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent  bg-indigo-500 text-white hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-all">Button</button>
+<button type="button" class="w-full py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border  bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-indigo-600 transition-all">Button</button>
+
+</div>
+
+                                    <!-- prism code -->
+                                    <div class="relative">
+                                        <pre class="language-markup" tabindex="0"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-3 w-full py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent  bg-indigo-500 text-white hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-all<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>w-full py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border  bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-indigo-600 transition-all<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+                                            </code></pre>
+ </div>
+
+                                </div>
+
+                            </div>
+                            <div
+                                class="fixed z-20 top-[3.8125rem] bottom-0 right-0 w-[19.5rem] py-10 overflow-y-auto hidden xl:block ">
+                                <h5
+                                    class="mb-3 text-sm font-semibold text-gray-800 dark:text-gray-300">On
+                                    this page</h5>
+                                <ul>
+                                    <li data-hs-scrollspy-group>
+                                        <a href="#basic-usage"
+                                            class="block py-0.5 text-sm font-medium leading-6 text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300 hs-scrollspy-active:text-indigo-600 dark:hs-scrollspy-active:text-indigo-400 active">Basic
+                                            usage</a>
+                                        <ul>
+                                            <li class="ml-4">
+                                                <a href="#example"
+                                                    class="group flex items-start gap-x-2 py-0.5 text-sm text-gray-700 leading-6 hover:text-gray-800  dark:hover:text-gray-300 hs-scrollspy-active:text-indigo-600 dark:hs-scrollspy-active:text-indigo-400 active">
+                                                    <svg
+                                                        class="w-2 h-6 text-gray-400 overflow-visible group-hover:text-gray-600 dark:text-gray-600 dark:group-hover:text-gray-500"
+                                                        width="14" height="14"
+                                                        viewBox="0 0 16 16"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M5 2L10.6464 7.64645C10.8417 7.84171 10.8417 8.15829 10.6464 8.35355L5 14"
+                                                            stroke="currentColor"
+                                                            stroke-width="2"
+                                                            stroke-linecap="round"></path>
+                                                    </svg>
+                                                    Example
+                                                </a>
+                                            </li>
+                                            <li class="ml-4">
+                                                <a href="#always-open"
+                                                    class="group flex items-start gap-x-2 py-0.5 text-sm text-gray-700 leading-6 hover:text-gray-800  dark:hover:text-gray-300 hs-scrollspy-active:text-indigo-600 dark:hs-scrollspy-active:text-indigo-400">
+                                                    <svg
+                                                        class="w-2 h-6 text-gray-400 overflow-visible group-hover:text-gray-600 dark:text-gray-600 dark:group-hover:text-gray-500"
+                                                        width="14" height="14"
+                                                        viewBox="0 0 16 16"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M5 2L10.6464 7.64645C10.8417 7.84171 10.8417 8.15829 10.6464 8.35355L5 14"
+                                                            stroke="currentColor"
+                                                            stroke-width="2"
+                                                            stroke-linecap="round"></path>
+                                                    </svg>
+                                                    Always open
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#nested"
+                                            class="block py-0.5 text-sm font-medium leading-6 text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300 hs-scrollspy-active:text-indigo-600 dark:hs-scrollspy-active:text-indigo-400">Nested</a></li>
+                                    <li><a href="#no-arrow"
+                                            class="block py-0.5 text-sm font-medium leading-6 text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300 hs-scrollspy-active:text-indigo-600 dark:hs-scrollspy-active:text-indigo-400">No
+                                            arrow</a></li>
+                                    <li><a href="#with-arrow"
+                                            class="block py-0.5 text-sm font-medium leading-6 text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300 hs-scrollspy-active:text-indigo-600 dark:hs-scrollspy-active:text-indigo-400">With
+                                            arrow</a></li>
+                                    <li><a
+                                            href="#with-title-and-arrow-stretched"
+                                            class="block py-0.5 text-sm font-medium leading-6 text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300 hs-scrollspy-active:text-indigo-600 dark:hs-scrollspy-active:text-indigo-400">With
+                                            title and arrow stretched</a></li>
+                                    <li><a href="#bordered"
+                                            class="block py-0.5 text-sm font-medium leading-6 text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300 hs-scrollspy-active:text-indigo-600 dark:hs-scrollspy-active:text-indigo-400">Bordered</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <script type="module" src="./assets/js/main.js"></script>
+
+    </body>
+
+</html>
