@@ -58,6 +58,18 @@ div.code-toolbar > .toolbar > .toolbar-item > a, div.code-toolbar > .toolbar > .
   }
 
   .show {
-      max-height: 99em;
-      transition: max-height .5s ease-in-out;
+    max-height: 99em;
+    transition: max-height .5s ease-in-out;
    }
+
+
+   code {
+    font-size: .875rem;
+    color: #dc2626;
+}
+code:not(.language-markup):not(.language-js)::before {
+    content: "`";
+}
+code:not(.language-markup):not(.language-js)::after {
+    content: "`";
+}
