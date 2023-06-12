@@ -44,8 +44,20 @@ div.code-toolbar > .toolbar > .toolbar-item > a, div.code-toolbar > .toolbar > .
     color: #1e293b;
     font-size: .8em;
     padding: 5px 12px;
-
     background: #94a3b8;
     box-shadow: none;
     border-radius: 0.25em;
 }
+
+.collapse {
+    display: block;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height .5s cubic-bezier(0, 1, 0, 1);
+    visibility: visible !important;
+  }
+
+  .show {
+      max-height: 99em;
+      transition: max-height .5s ease-in-out;
+   }

@@ -8,7 +8,7 @@ window.ResizeObserver = ResizeObserver;
 
 
 import "./alert.js"
-
+import "./collapse.js"
 
 // Import all of prism's JS
 import "../../../node_modules/prismjs/prism";
