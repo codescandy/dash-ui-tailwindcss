@@ -15,6 +15,8 @@ import "../../../node_modules/prismjs/prism";
 import "../../../node_modules/prismjs/plugins/toolbar/prism-toolbar";
 import "../../../node_modules/prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard";
 
+import "../../../node_modules/pace-js/pace.js";
+
 
 import "../../../node_modules/prismjs/plugins/toolbar/prism-toolbar.css"
 import "../css/main.css";
